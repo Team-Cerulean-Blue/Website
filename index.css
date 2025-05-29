@@ -1,4 +1,4 @@
-h1{
+h1,h2,h3,h4,h5,h6{
     margin: 0;
 }
 
@@ -13,8 +13,13 @@ a{
 
 div.portion img{
     width: 41%;
-    padding: 0% 2%;
+    padding: 0% 1%;
     object-fit: contain;
+    padding: 0% calc( 1vw + 1vh ) 0% 0%;
+}
+
+#logo-portion img{
+    padding: 0% 2%;
 }
 
 div.portion{
@@ -23,6 +28,10 @@ div.portion{
     align-items: center;
     width: 95%;
     padding: 1% 2.5%;
+}
+
+div.portion-text{
+    width: 100%; /* CSS decides to reduces the width for no reason unless i put this */
 }
 
 div.portion-text h1{
@@ -49,6 +58,10 @@ div.portion:nth-child(even):last-child{
     padding-bottom: 6vh;
 }
 
+div.portion:nth-child(even) a{
+    color:black;
+}
+
 div.portion:nth-child(odd){
     color:white;
     flex-direction: row;
@@ -69,11 +82,11 @@ div#content, div#content *{
     animation: 1s showIn ease !important;
 }
 
-#blockmenu-wrapper, #blockmenu{
+.bilist-wrapper, .bilist{
     display:grid;
 }
 
-#blockmenu{
+.bilist{
     grid-template-columns: repeat(2, 1fr);
 }
 
@@ -88,6 +101,46 @@ div#content, div#content *{
     font-size: min(3vh, 3vw);
 }
 
+div.small-logo-text-container img{
+    width:calc( min( 6vw + 6vh, 1.5in ) );
+    padding-top: 0.6em;
+}
+
+div.small-logo-text-container{
+    display:flex;
+    margin-bottom: 1.2em;
+}
+
+div.logo-container-content p{
+    margin-top: 0;
+}
+
+.button-anchor{
+    text-decoration: none;
+    background: #fff;
+    color: #000;
+    padding: 0.05em 0.3em 0.1em 0.3em;
+    border-radius: 0.4em;
+    white-space: nowrap;
+}
+
+div.logo-container-content:has(.button-anchor) p{
+    padding-bottom:0.5vh;
+}
+
+#member-list img{
+    height:calc( min( 4vw + 4vh, 1in ) );
+    width:unset;
+}
+
+#member-list a{
+    padding:0;
+}
+
+.logo-container-content{
+    text-align: left;
+}
+
 @media (orientation: portrait){
     div.portion:nth-child(odd){
         flex-direction: column;
@@ -95,13 +148,13 @@ div#content, div#content *{
     div.portion:nth-child(even){
         flex-direction: column-reverse;
     }
-    div.portion img{
+    div.portion img.logo-big{
         width: 96%;
         padding: 0% 2%;
         margin-bottom:2vh;
         object-fit: contain;
     }
-    #blockmenu{
+    .bilist{
         grid-template-columns: repeat(1, 1fr);
     }
     #blockmenu a{
